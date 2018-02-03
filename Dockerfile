@@ -26,3 +26,4 @@ RUN pecl install xdebug-2.5.5 \
 RUN docker-php-ext-configure pgsql -with-pgsql=/usr/local/pgsql
 
 RUN docker-php-ext-install mysql mysqli pdo pdo_mysql pgsql pdo_pgsql
+
