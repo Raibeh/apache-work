@@ -11,7 +11,6 @@ RUN apt-get update \
 	libpq-dev \
 	libxml2-dev \
     php-soap \
-    && apt clean -y \
     && rm -rf /var/lib/apt/lists/*
 
 RUN curl -Lsf 'https://storage.googleapis.com/golang/go1.8.3.linux-amd64.tar.gz' | tar -C '/usr/local' -xvzf -
