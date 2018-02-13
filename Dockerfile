@@ -9,6 +9,9 @@ RUN apt-get update \
 	libmcrypt-dev \
 	libpng-dev \
 	libpq-dev \
+	libxml2-dev \
+    php-soap \
+    && apt clean -y \
     && rm -rf /var/lib/apt/lists/*
 
 RUN curl -Lsf 'https://storage.googleapis.com/golang/go1.8.3.linux-amd64.tar.gz' | tar -C '/usr/local' -xvzf -
@@ -26,5 +29,6 @@ RUN pecl install xdebug-2.5.5 \
 
 RUN docker-php-ext-configure pgsql -with-pgsql=/usr/local/pgsql
 
-RUN docker-php-ext-install mysql mysqli pdo pdo_mysql pgsql pdo_pgsql zip
+RUN docker-php-ext-install mysql mysqli pdo pdo_mysql pgsql pdo_pgsql zip sockets soap
+
 
