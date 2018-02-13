@@ -27,6 +27,9 @@ RUN docker-php-ext-install -j$(nproc) iconv mcrypt \
 RUN pecl install xdebug-2.5.5 \
     && docker-php-ext-enable xdebug
 
+RUN pecl install rar \
+    && docker-php-ext-enable rar
+
 RUN docker-php-ext-configure pgsql -with-pgsql=/usr/local/pgsql
 
 RUN docker-php-ext-install mysql mysqli pdo pdo_mysql pgsql pdo_pgsql zip sockets soap
